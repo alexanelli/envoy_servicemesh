@@ -6,7 +6,6 @@ admin:
       port_value: 9901
 static_resources:
   listeners:
-
     -
       name: "service-c-svc-http-listener"
       address:
@@ -37,7 +36,6 @@ static_resources:
                 http_filters:
                   -
                     name: "envoy.router"
-    
   clusters:
       -
         name: "service_c"

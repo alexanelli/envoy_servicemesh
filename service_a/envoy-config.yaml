@@ -6,7 +6,6 @@ admin:
       port_value: 9901
 static_resources:
   listeners:
-
     -
       name: "service-a-svc-http-listener"
       address:
@@ -67,7 +66,6 @@ static_resources:
                 http_filters:
                   -
                     name: "envoy.router"
-
     -
       name: "service-c-svc-http-listener"
       address:
@@ -108,7 +106,7 @@ static_resources:
           -
             socket_address:
               address: "service_a"
-              port_value: 8081  
+              port_value: 8081
       -
         name: "service_b"
         connect_timeout: "0.25s"
@@ -119,7 +117,6 @@ static_resources:
             socket_address:
               address: "service_b_envoy"
               port_value: 8789
-
       -
         name: "service_c"
         connect_timeout: "0.25s"
