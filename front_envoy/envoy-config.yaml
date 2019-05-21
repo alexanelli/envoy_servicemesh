@@ -47,5 +47,5 @@ static_resources:
         - 
           socket_address: 
             address: "service_a_envoy"
-            port_value: 8786
+            port_value: 8181
     
