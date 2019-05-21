@@ -21,7 +21,7 @@ services:
   service_a:
     build: service_a/
     ports:
-    - "8081:8081"
+      - "8081:8081"
 
   service_b_envoy:
     image: envoyproxy/envoy-alpine:v1.10.0
@@ -34,7 +34,7 @@ services:
   service_b:
     build: service_b/
     ports:
-    - "8082:8082"
+      - "8082:8082"
 
   service_c_envoy:
     image: envoyproxy/envoy-alpine:v1.10.0
@@ -47,4 +47,4 @@ services:
   service_c:
     build: service_c/
     ports:
-    - "8083:8083"  
+      - "8083:8083"  
