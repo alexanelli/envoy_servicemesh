@@ -1,5 +1,5 @@
 ## Serice Mesh with Envoy
-![setup](https://raw.githubusercontent.com/dnivra26/envoy_servicemesh/master/envoy_servicemesh.png)
+![setup](./distributed_tracing.png)
 
 
 ### Run:  
