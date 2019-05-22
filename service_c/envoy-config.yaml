@@ -1,3 +1,9 @@
+stats_sinks:
+  -
+    name: "envoy.statsd"
+    config:
+      tcp_cluster_name: "statsd-exporter"
+      prefix: service-b
 tracing:
   http:
     name: envoy.zipkin
@@ -61,13 +67,23 @@ static_resources:
             address: "service_c"
             port_value: 8083
     - 
-        name: zipkin
-        connect_timeout: 0.25s
-        type: strict_dns
-        lb_policy: round_robin
-        hosts:
-        - 
+      name: zipkin
+      connect_timeout: 0.25s
+      type: strict_dns
+      lb_policy: round_robin
+      hosts:
+      - 
+        socket_address:
+          address: zipkin
+          port_value: 9411
+    -
+      name: "statsd-exporter"
+      connect_timeout: "0.25s"
+      type: "strict_dns"
+      lb_policy: "ROUND_ROBIN"
+      hosts:
+        -
           socket_address:
-            address: zipkin
-            port_value: 9411
+            address: "statsd_exporter"
+            port_value: 9125
 
