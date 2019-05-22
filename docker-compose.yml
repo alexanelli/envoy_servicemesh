@@ -46,4 +46,12 @@ services:
   service_c:
     build: service_c/
     ports:
-      - "8083:8083"  
+      - "8083:8083"
+  
+  zipkin:
+    image: jaegertracing/all-in-one
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+    ports:
+      - 9411:9411
+      - 16686:16686
