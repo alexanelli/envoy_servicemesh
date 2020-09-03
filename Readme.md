@@ -1,15 +1,8 @@
 ## Serice Mesh with Envoy
-![setup](./envoy_monitoring.png)
+![setup](./envoy_servicemesh.png)
 
-## Ports/Networking:
-exposed via docker:
-- front
-  - 8080:80
-  - 9901:9901
-- service-b-envoy
-  - 8082:8082
-- service-b
-  - 8082:8082
+---
+### **Ports/Networking**
 
 ### Service A
 
@@ -47,6 +40,8 @@ service_a_envoy
 service_a
   - 8081:8081
 
+---
+
 ### Service B
 
 #### Go App
@@ -68,10 +63,13 @@ service_b.hosts.socket_address
 service_b.ports:
 - 8082:8082
 
+---
 
 ### Run:
 1. `docker-compose build`
 2. `docker-compose up`
 3. Hit http://localhost:8080
-4. Visit http://localhost:9090 for prometheus
-5. Visit http://localhost:3000 for grafana dashboard
+
+~4. Visit http://localhost:9090 for prometheus~ (not enabled right now)
+
+~5. Visit http://localhost:3000 for grafana dashboard~ (not enabled right now)
